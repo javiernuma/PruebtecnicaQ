@@ -1,5 +1,7 @@
 package com.puntoCuatro.resproductionList.models;
 
+import com.puntoCuatro.resproductionList.dto.CancionDTO;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "canciones")
-public class Cancion {
+public class Cancion extends Model<CancionDTO> {
     @Id
     @Column(name = "id_cancion", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -54,5 +56,16 @@ public class Cancion {
 
     public void setAnno(String anno) {
         this.anno = anno;
+    }
+
+
+    @Override
+    public CancionDTO getDto(){
+        return super.getDto();
+    }
+
+    @Override
+    public Class<CancionDTO> getDtoClass(){
+        return CancionDTO.class;
     }
 }

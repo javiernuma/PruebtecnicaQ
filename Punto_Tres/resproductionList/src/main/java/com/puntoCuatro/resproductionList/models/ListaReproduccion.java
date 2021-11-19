@@ -1,5 +1,8 @@
 package com.puntoCuatro.resproductionList.models;
 
+import com.puntoCuatro.resproductionList.dto.ListaReproduccioDTO;
+import com.puntoCuatro.resproductionList.dto.UsuarioDTO;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +17,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ListaReproduccion")
-public class ListaReproduccion {
+public class ListaReproduccion extends Model<ListaReproduccioDTO> {
     @Id
     @Column(name = "id_lista", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -62,5 +65,15 @@ public class ListaReproduccion {
 
     public void setListaCanciones(List<Cancion> listaCanciones) {
         this.listaCanciones = listaCanciones;
+    }
+
+    @Override
+    public ListaReproduccioDTO getDto(){
+        return super.getDto();
+    }
+
+    @Override
+    public Class<ListaReproduccioDTO> getDtoClass(){
+        return ListaReproduccioDTO.class;
     }
 }

@@ -41,7 +41,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory().withClient("frontGradulab")
+        clients.inMemory().withClient("front")
                 .secret(passwordEncoder.encode("12345"))
                 .scopes("read", "wrrite")
                 .authorizedGrantTypes("password", "refresh_token")

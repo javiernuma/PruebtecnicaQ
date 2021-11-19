@@ -30,20 +30,6 @@ public class UsuarioRest {
         return new ResponseObject<>(usuarioService.obtenerInfo(id));
     }
 
-    /**@PostMapping("/editarPerfil")
-    public ResponseObject<ResgistroPersonaDTO> editarPerfil(@RequestBody ResgistroPersonaDTO resgistroPersonaDTO){
-        try{
-            logger.info("#### Se edita el perfil de la persona ###");
-
-           return new ResponseObject<>(usuarioService.actualizarPerfil(resgistroPersonaDTO));
-        }catch (Exception e){
-            return new ResponseObject<>(ResponseCodes.REQUEST_ERROR_CODE, messageSource.getMessage(
-                    exceptionMessage, null, LocaleContextHolder.getLocale()));
-        }
-
-    }**/
-
-
     @PostMapping(value = "/cambiarclave", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseObject<String> recuperarClave(@RequestBody UsuarioDTO usuarioDTO){
         logger.info("#### Se cambia la clave del usuario ###");

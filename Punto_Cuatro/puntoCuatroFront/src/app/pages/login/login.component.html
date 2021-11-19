@@ -1,0 +1,52 @@
+<div id="login" class="bg-image shadow-2-strong">
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center align-items-center minh-100">
+        <div class="col-md-4 ufps-center-block">
+          <div class="card">
+            <div class="card-header bg-danger">
+              <h1 class="text-white"> Iniciar Sesion </h1>
+            </div>
+            <div class="card-body">
+              <form class="form p-t-20"
+                    [formGroup]="loginFrom"
+                    (ngSubmit)="login()"
+              >
+                <div class="form-group">
+                  <div class="input-group">
+                    <input
+                           name="login"
+                           type="text" class="form-control"
+                           id="cedula" placeholder="login"
+                           formControlName="login">
+                    <div class="input-group-addon"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input
+                           name="clave"
+                           type="password" class="form-control"
+                           id="contraseña" placeholder="Contraseña"
+                           formControlName="contrasena">
+                    <div class="input-group-addon"><i class="ti-lock"></i></div>
+                  </div>
+                </div>
+                <div class="text-left" >
+                  <button (click)='login()'type="submit">Iniciar Sesión</button>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="checkbox checkbox-info pull-left p-t-0">
+                      <a routerLink="/recuperarclave" class="text-dark"> ¿Olvidaste tu Clave?</a>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>
